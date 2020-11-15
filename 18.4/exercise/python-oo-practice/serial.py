@@ -28,9 +28,10 @@ class SerialGenerator:
         """
 
     def generate(self):
+        """Prints the next number in the series"""
         print(self.start)
         self.start += 1
 
     def reset(self):
+        """Resets the starting number of the series to default"""
         self.start = self.default_start
-
