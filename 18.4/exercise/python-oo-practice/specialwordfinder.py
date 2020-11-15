@@ -9,16 +9,17 @@ class SpecialWordFinder(WordFinder):
     >>> swf = SpecialWordFinder(p)
     235896 words read
 
-    >>> len(swf.words) == 235896
-    True
+    >>> print(len(swf.words))
+    7
 
-    >>> wset = set(swf.words)
-    >>> wsset = set(swf.words_special)
-    >>> print(wset.difference(wsset))
-    {'', '# Veggies', '# Fruits'}
+    >>> wset = set(swf.words_original)
+    >>> wsset = set(swf.words)
+    >>> print(sorted(wset.intersection(wsset)))
+    ['Zyzomys', 'Zyzzogeton', 'apple', 'kale', 'mango', 'parsnips', 'zythum']
 
     """
 
     def __init__(self, file_path):
         super().__init__(file_path)
+        self.words_original = self.words  # For testing purposes, only.
         self.words = [word for word in self.words if word and not word.isspace() and not word.startswith('#')]
