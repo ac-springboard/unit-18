@@ -31,9 +31,3 @@ class WordFinder:
     def random(self):
         """Returns a random word from the list of words in this instance"""
         return choice(self.words)
-
-    def random(self, lst):
-        """Returns a random word from the list of words from a given list
-        Note: this method could be static.
-        """
-        return choice(lst)
